@@ -3,7 +3,7 @@ FROM debian:bookworm-slim
 HEALTHCHECK NONE
 
 # Install dependencies
-RUN apt-get update && apt-get install -y bzip2 ca-certificates curl libarchive13 lib32gcc-s1 locales p7zip-full tar unzip wget xz-utils
+RUN apt-get update && apt-get install -y bzip2 ca-certificates curl libarchive13 lib32gcc-s1 locales p7zip-full tar unzip wget xz-utils numactl
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 RUN locale-gen --no-purge en_US.UTF-8
 RUN apt-get clean
